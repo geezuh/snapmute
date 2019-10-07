@@ -9,6 +9,9 @@ stdscr=curses.initscr()
 curses.noecho()
 curses.cbreak()
 stdscr.keypad(True)
+curses.start_color()
+curses.use_default_colors()
+curses.init_pair(1,1,-1)
 
 def getserver():
     loop = asyncio.get_event_loop()
