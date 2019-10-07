@@ -6,7 +6,7 @@ from curses import wrapper
 #init curses stuff
 hostname="nosuch"
 stdscr=curses.initscr()
-curses.noecho()
+#curses.noecho()
 curses.cbreak()
 stdscr.keypad(True)
 curses.start_color()
@@ -49,6 +49,10 @@ def main(stdscr):
             mutetoggle(server,index)
         elif key=="q":
             break
+        if index==y:
+            index=0
+        elif index==-1:
+            index=y-1
         #stdscr.addstr(y+1,1,key)
         stdscr.refresh()
     return;
