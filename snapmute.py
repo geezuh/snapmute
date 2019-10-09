@@ -40,10 +40,15 @@ def main(stdscr):
                 at=curses.A_BOLD
             stdscr.addstr(y,1,client.friendly_name,at)   
             y+=1
-        key=stdscr.getkey()
-        if key=="KEY_DOWN":
+        #key=stdscr.getkey()
+        print(key)
+        if index==y:
+            index=0
+        elif index==-1:
+            index=y-1
+        if (key=="KEY_DOWN") | (key=="j"):
             index+=1
-        elif key=="KEY_UP":
+        elif (key=="KEY_UP") | (key=="k"):
             index-=1
         elif key=="\n":
             mutetoggle(server,index)
