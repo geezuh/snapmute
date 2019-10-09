@@ -40,8 +40,8 @@ def main(stdscr):
                 at=curses.A_BOLD
             stdscr.addstr(y,1,client.friendly_name,at)   
             y+=1
-        #key=stdscr.getkey()
-        print(key)
+        key=stdscr.getkey()
+        #print(key)
         if index==y:
             index=0
         elif index==-1:
